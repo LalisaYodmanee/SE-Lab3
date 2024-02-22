@@ -57,7 +57,6 @@
 
   </div>
 </template>
-
 <script>
 import { useQuasar } from 'quasar'
 import { ref } from 'vue'
@@ -69,12 +68,10 @@ export default {
     const name = ref(null)
     const age = ref(null)
     const accept = ref(false)
-
     return {
       name,
       age,
       accept,
-
       onSubmit () {
         if (accept.value !== true) {
           $q.notify({
@@ -93,7 +90,6 @@ export default {
           })
         }
       },
-
       onReset () {
         name.value = null
         age.value = null
@@ -103,4 +99,3 @@ export default {
   }
 }
 </script>
-
