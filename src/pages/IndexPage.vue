@@ -26,7 +26,27 @@
           val => val > 0 && val < 100 || 'Please type a real age'
         ]"
       />
-
+      <q-input
+        filled
+        type="number"
+        v-model="age"
+        label="Your age *"
+        lazy-rules
+        :rules="[
+          val => val !== null && val !== '' || 'Please type your age',
+          val => val > 0 && val < 100 || 'Please type a real age'
+        ]"
+      /><q-input
+        filled
+        type="number"
+        v-model="age"
+        label="Your age *"
+        lazy-rules
+        :rules="[
+          val => val !== null && val !== '' || 'Please type your age',
+          val => val > 0 && val < 100 || 'Please type a real age'
+        ]"
+      />
       <q-toggle v-model="accept" label="I accept the license and terms" />
 
       <div>
@@ -37,7 +57,6 @@
 
   </div>
 </template>
-
 <script>
 import { useQuasar } from 'quasar'
 import { ref } from 'vue'
@@ -49,12 +68,10 @@ export default {
     const name = ref(null)
     const age = ref(null)
     const accept = ref(false)
-
     return {
       name,
       age,
       accept,
-
       onSubmit () {
         if (accept.value !== true) {
           $q.notify({
@@ -73,7 +90,6 @@ export default {
           })
         }
       },
-
       onReset () {
         name.value = null
         age.value = null
@@ -83,4 +99,3 @@ export default {
   }
 }
 </script>
-
